@@ -1,6 +1,6 @@
 insert into inventario(id,nombre,stock,port)
-values(101,'reloj',5,0);
+values(101,'coca',5,0);
 insert into inventario(id,nombre,stock,port)
-values(102,'pantalon',100,0);
+values(102,'fanta',100,0);
 insert into inventario(id,nombre,stock,port)
-values(103,'celular',50,0);
+values(103,'pepsi',50,0);
