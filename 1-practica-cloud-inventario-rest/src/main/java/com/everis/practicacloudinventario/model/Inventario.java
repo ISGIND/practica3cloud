@@ -10,10 +10,10 @@ public class Inventario {
 	@Id
 	private long id;
 	
-	@Column
+	@Column(name = "nombre")
 	private String nombre;
 	
-	@Column
+	@Column(name = "stock")
 	private int stock;
 
 	public long getId() {

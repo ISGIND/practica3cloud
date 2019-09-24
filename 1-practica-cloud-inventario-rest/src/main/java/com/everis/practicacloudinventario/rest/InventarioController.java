@@ -19,12 +19,12 @@ public class InventarioController {
 	@Autowired
 	private Environment environment;
 	
-	@GetMapping("/consultarInventario/producto/{nombre}")
-	public InventarioResponse consultarInventario(@PathVariable String nombre) {
+	@GetMapping("/consultarInventario/producto/{id}")
+	public InventarioResponse consultarInventario(@PathVariable long id) {
 		InventarioResponse response = new InventarioResponse();
 		
 		try {
-			Inventario valor = inventarioService.findByNombre(nombre);
+			Inventario valor = inventarioService.consultarInventario(id);
 			if(valor == null) {
 				response.setSuccessful(false);
 				response.setMessage("Intente más tarde");
