@@ -8,4 +8,5 @@ import com.everis.practicacloudinventario.model.Inventario;
 @Repository
 public interface InventarioRepository extends JpaRepository<Inventario, Long> {
 
+	Inventario findByNombre(String Nombre);
 }
