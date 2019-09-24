@@ -19,11 +19,7 @@ public class CompraController {
 	
 	@Value("${config.reorden}")
 	private double reorden;
-	
-	
-	
-	
-	
+
 	@GetMapping ("/consultarInventario/producto/{id}/cantidad/{cantidad}")
 	public CompraResponse consultarInventario(@PathVariable long id, 
 			@PathVariable int cantidad) {
