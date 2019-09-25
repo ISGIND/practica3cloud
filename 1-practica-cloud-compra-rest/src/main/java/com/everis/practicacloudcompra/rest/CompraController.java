@@ -31,7 +31,7 @@ public class CompraController {
 		try {
 			response = compraServiceProxy.retrieveInventario(id);
 						
-			double stock= response.getValue().getValue().getStock();
+			double stock= response.getValue().getStock();
 			double stockminimo = reorden/100*stock;
 			
 		 if ((stock - stockminimo) >= cantidad) {
