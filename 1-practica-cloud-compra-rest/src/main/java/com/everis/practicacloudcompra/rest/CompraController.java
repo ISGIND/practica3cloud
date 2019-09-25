@@ -22,7 +22,7 @@ public class CompraController {
 	@Autowired //inyecta dependencia de service proxy
 	private CompraServiceProxy compraServiceProxy;
 
-	@GetMapping ("/comprarProducto/producto/{id}/cantidad/{cantidad}")
+	@GetMapping ("/consultarInventario/producto/{id}/cantidad/{cantidad}")
 	public CompraResponse consultarInventario(@PathVariable long id, 
 			@PathVariable int cantidad) {
 			
@@ -37,6 +37,7 @@ public class CompraController {
 		 if ((stock - stockminimo) >= cantidad) {
 				response.setSuccessful(true);
 				response.setMessage("Se puede comparar");
+				
 		 }else {
 			 response.setSuccessful(false);
 			 response.setMessage("No se puede comprar");

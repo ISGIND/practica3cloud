@@ -33,12 +33,12 @@ public class Compra implements java.io.Serializable {
 	public Compra() {
 	}
 
-	public Compra(int id, Inventario2 inventario) {
+	public Compra(int id, Inventario inventario) {
 		this.id = id;
 		this.inventario = inventario;
 	}
 
-	public Compra(int id, Inventario2 inventario, String fechahora, Integer cantidad) {
+	public Compra(int id, Inventario inventario, String fechahora, Integer cantidad) {
 		this.id = id;
 		this.inventario = inventario;
 		this.fechahora = fechahora;
@@ -58,11 +58,11 @@ public class Compra implements java.io.Serializable {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "inventario_id", nullable = false)
-	public Inventario2 getInventario() {
+	public Inventario getInventario() {
 		return this.inventario;
 	}
 
-	public void setInventario(Inventario2 inventario) {
+	public void setInventario(Inventario inventario) {
 		this.inventario = inventario;
 	}
 
