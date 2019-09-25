@@ -16,7 +16,7 @@ public class InventarioService {
 		return inventarioRepository.findById(id).get();
 	}
 	
-	public Inventario salidaProducto(Inventario inventario) {
+	public Inventario decrementar(Inventario inventario) {
 		return inventarioRepository.save(inventario);
 	}
 }

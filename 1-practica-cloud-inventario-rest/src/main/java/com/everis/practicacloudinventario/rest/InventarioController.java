@@ -47,10 +47,21 @@ public class InventarioController {
 	
 	@PostMapping("/decrementar/producto/{id}/cantidad/{cantidad}")
 	public InventarioResponse salidaProducto(@PathVariable int id, @PathVariable int cantidad) {
-		Inventario inventario = new Inventario();
-		inventario.setId(id);
-		
-		return null;
+		Inventario inventario = inventarioService.consultarInventario(id);
+		InventarioResponse response = new InventarioResponse();
+		try {
+			inventario.setStock((inventario.getStock())-cantidad);
+			response.setValue(inventarioService.decrementar(inventario));
+			response.setSuccessful(true);
+			response.setMessage("Inventario Actualizado");
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			response.setMessage("Error, intentar mas tarde");
+			response.setSuccessful(false);
+		}
+		response.setPort(Integer.parseInt(environment.getProperty("local.server.port")));
+		return response;
 	}
 	
 	
