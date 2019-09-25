@@ -1,12 +1,12 @@
 package com.everis.practicacloudcompra.response;
 
-import com.everis.practicacloudcompra.model.Inventario;
+import com.everis.practicacloudcompra.model.Inventario2;
 
 public class CompraResponse {
 	
 	private boolean successful;
 	private String message;
-	private Inventario value;
+	private Inventario2 value;
 	private int port;
 	
 	public boolean isSuccessful() {
@@ -21,10 +21,10 @@ public class CompraResponse {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	public Inventario getValue() {
+	public Inventario2 getValue() {
 		return value;
 	}
-	public void setValue(Inventario value) {
+	public void setValue(Inventario2 value) {
 		this.value = value;
 	}
 	public int getPort() {

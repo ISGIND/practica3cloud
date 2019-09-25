@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.everis.practicacloudinventario.model.Inventario;
@@ -43,6 +44,16 @@ public class InventarioController {
 		
 		return response;
 	}
+	
+	@PostMapping("/decrementar/producto/{id}/cantidad/{cantidad}")
+	public InventarioResponse salidaProducto(@PathVariable int id, @PathVariable int cantidad) {
+		Inventario inventario = new Inventario();
+		inventario.setId(id);
+		
+		return null;
+	}
+	
+	
 	
 	
 }

@@ -22,7 +22,7 @@ public class CompraController {
 	@Autowired //inyecta dependencia de service proxy
 	private CompraServiceProxy compraServiceProxy;
 
-	@GetMapping ("/consultarInventario/producto/{id}/cantidad/{cantidad}")
+	@GetMapping ("/comprarProducto/producto/{id}/cantidad/{cantidad}")
 	public CompraResponse consultarInventario(@PathVariable long id, 
 			@PathVariable int cantidad) {
 			

@@ -15,4 +15,8 @@ public class InventarioService {
 	public Inventario consultarInventario(Long id) {
 		return inventarioRepository.findById(id).get();
 	}
+	
+	public Inventario salidaProducto(Inventario inventario) {
+		return inventarioRepository.save(inventario);
+	}
 }
