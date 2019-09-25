@@ -4,6 +4,8 @@ package com.everis.practicacloudcompra.model;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,6 +14,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 
 /**
@@ -27,7 +31,7 @@ public class Compra implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 	private int id;
 	private Inventario inventario;
-	private String fechahora;
+	private Date fechahora;
 	private Integer cantidad;
 
 	public Compra() {
@@ -38,7 +42,7 @@ public class Compra implements java.io.Serializable {
 		this.inventario = inventario;
 	}
 
-	public Compra(int id, Inventario inventario, String fechahora, Integer cantidad) {
+	public Compra(int id, Inventario inventario, Date fechahora, Integer cantidad) {
 		this.id = id;
 		this.inventario = inventario;
 		this.fechahora = fechahora;
@@ -66,12 +70,13 @@ public class Compra implements java.io.Serializable {
 		this.inventario = inventario;
 	}
 
-	@Column(name = "fechahora", length = 45)
-	public String getFechahora() {
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "fechahora",length = 19)
+	public Date getFechahora() {
 		return this.fechahora;
 	}
 
-	public void setFechahora(String fechahora) {
+	public void setFechahora(Date fechahora) {
 		this.fechahora = fechahora;
 	}
 
