@@ -26,7 +26,7 @@ public class Compra implements java.io.Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	private int id;
-	private Inventario2 inventario;
+	private Inventario inventario;
 	private String fechahora;
 	private Integer cantidad;
 

@@ -31,8 +31,8 @@ public class Inventario implements java.io.Serializable {
 	private Integer id;
 	private String nombre;
 	private Integer stock;
-	@JsonIgnore
-	private Set<Compra> compras = new HashSet<Compra>(0);
+
+	//private Set<Compra> compras = new HashSet<Compra>(0);
 
 	public Inventario() {
 	}
