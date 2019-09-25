@@ -50,6 +50,7 @@ public class CompraController {
 			 		response.setSuccessful(true);
 					response.setMessage("Se puede comparar");
 					compra.setInventario(response.getValue());
+					compra.setFechahora(new java.util.Date());
 				    compra.setCantidad(cantidad);
 					compraservice.insertar(compra);
 			 	}else {
