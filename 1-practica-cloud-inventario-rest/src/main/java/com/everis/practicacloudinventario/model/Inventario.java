@@ -28,16 +28,16 @@ public class Inventario implements java.io.Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private int id;
+	private Integer id;
 	private String nombre;
 	private Integer stock;
-//	@JsonIgnore
-//	private Set<Compra> compras = new HashSet<Compra>(0);
+	@JsonIgnore
+	private Set<Compra> compras = new HashSet<Compra>(0);
 
 	public Inventario() {
 	}
 
-	public Inventario(int id) {
+	public Inventario(Integer id) {
 		this.id = id;
 	}
 
@@ -51,11 +51,11 @@ public class Inventario implements java.io.Serializable {
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "id", unique = true, nullable = false)
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

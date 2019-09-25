@@ -21,7 +21,7 @@ public class InventarioController {
 	private Environment environment;
 	
 	@GetMapping("/consultarInventario/producto/{id}")
-	public InventarioResponse consultarInventario(@PathVariable long id) {
+	public InventarioResponse consultarInventario(@PathVariable int id) {
 		InventarioResponse response = new InventarioResponse();
 		
 		try {

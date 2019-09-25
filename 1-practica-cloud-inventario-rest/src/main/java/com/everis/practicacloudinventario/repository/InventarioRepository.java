@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.everis.practicacloudinventario.model.Inventario;
 
 @Repository
-public interface InventarioRepository extends JpaRepository<Inventario, Long> {
+public interface InventarioRepository extends JpaRepository<Inventario, Integer> {
 
 }

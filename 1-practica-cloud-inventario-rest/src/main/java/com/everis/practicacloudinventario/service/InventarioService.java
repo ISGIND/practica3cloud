@@ -12,7 +12,7 @@ public class InventarioService {
 	@Autowired
 	private InventarioRepository inventarioRepository;
 	
-	public Inventario consultarInventario(Long id) {
+	public Inventario consultarInventario(int id) {
 		return inventarioRepository.findById(id).get();
 	}
 	
