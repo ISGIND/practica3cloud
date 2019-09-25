@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.everis.practicacloudcompra.proxy.CompraServiceProxy;
+import com.everis.practicacloudcompra.repository.CompraRepository;
 import com.everis.practicacloudcompra.response.CompraResponse;
 
 @RestController
@@ -21,6 +22,9 @@ public class CompraController {
 	
 	@Autowired //inyecta dependencia de service proxy
 	private CompraServiceProxy compraServiceProxy;
+	
+	@Autowired
+	private CompraRepository comprarepository;
 
 	@GetMapping ("/consultarInventario/producto/{id}/cantidad/{cantidad}")
 	public CompraResponse consultarInventario(@PathVariable long id, 
@@ -37,6 +41,7 @@ public class CompraController {
 		 if ((stock - stockminimo) >= cantidad) {
 				response.setSuccessful(true);
 				response.setMessage("Se puede comparar");
+				
 				
 		 }else {
 			 response.setSuccessful(false);
