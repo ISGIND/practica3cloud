@@ -25,17 +25,7 @@ public class CompraController {
 	@GetMapping ("/consultarInventario/producto/{id}/cantidad/{cantidad}")
 	public CompraResponse consultarInventario(@PathVariable long id, 
 			@PathVariable int cantidad) {
-<<<<<<< Updated upstream
 			
-=======
-		
-		
-		String url = "http://192.168.5.38:8090/consultarInventario/producto/{id}";
-		
-		Map<String,Long> uriVariables = new HashMap<>();
-		uriVariables.put("id", id);
-		
->>>>>>> Stashed changes
 		CompraResponse response = new CompraResponse();
 		
 		try {
