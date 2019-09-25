@@ -7,9 +7,6 @@ public class CompraResponse {
 	private boolean successful;
 	private String message;
 	private InventarioResponse value;
-//	private int port;
-
-	
 	public boolean isSuccessful() {
 		return successful;
 	}
@@ -31,6 +28,5 @@ public class CompraResponse {
 	
 	
 	
-
 
 }
