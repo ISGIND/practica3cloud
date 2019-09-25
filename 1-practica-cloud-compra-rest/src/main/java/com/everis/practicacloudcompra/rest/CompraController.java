@@ -32,7 +32,7 @@ public class CompraController {
 	private CompraService compraservice;
 
 	@GetMapping ("/consultarInventario/producto/{id}/cantidad/{cantidad}")
-	public CompraResponse consultarInventario(@PathVariable long id, 
+	public CompraResponse consultarInventario(@PathVariable int id, 
 			@PathVariable int cantidad) {
 			
 		CompraResponse response = new CompraResponse();
@@ -45,13 +45,18 @@ public class CompraController {
 			double stockminimo = reorden/100*stock;
 			
 		 if ((stock - stockminimo) >= cantidad) {
-				response.setSuccessful(true);
-				response.setMessage("Se puede comparar");
-				compra.setFechahora(new Date());
+			 	response = compraServiceProxy.retrieveDecrementar(id, cantidad);
+			 	if(response.isSuccessful()) {
+			 		response.setSuccessful(true);
+					response.setMessage("Se puede comparar");
+					compra.setInventario(response.getValue());
+				    compra.setCantidad(cantidad);
+					compraservice.insertar(compra);
+			 	}else {
+				response.setSuccessful(false);
+				response.setMessage("no se pudo intentalo mas tarde");
 				compra.setInventario(response.getValue());
-			    compra.setCantidad(cantidad);
-				compraservice.insertar(compra);
-				
+			 	}
 		 }else {
 			 response.setSuccessful(false);
 			 response.setMessage("No se puede comprar");

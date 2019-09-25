@@ -1,18 +1,20 @@
 package com.everis.practicacloudcompra.model;
 
+import static javax.persistence.GenerationType.IDENTITY;
+
 // default package
-// Generated 25/09/2019 01:16:21 PM by Hibernate Tools 5.2.12.Final
+// Generated 25/09/2019 04:27:59 PM by Hibernate Tools 5.2.12.Final
 
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.everis.practicacloudcompra.model.Compra;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
@@ -22,10 +24,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name = "inventario", catalog = "practica3")
 public class Inventario implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private int id;
 	private String nombre;
 	private Integer stock;
@@ -47,7 +45,7 @@ public class Inventario implements java.io.Serializable {
 	}
 
 	@Id
-	
+	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "id", unique = true, nullable = false)
 	public int getId() {
 		return this.id;
