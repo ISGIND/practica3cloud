@@ -1,15 +1,13 @@
 package com.everis.practicacloudcompra.response;
 
-import java.math.BigDecimal;
 
-import com.everis.practicacloudcompra.model.Inventario;
 
 public class CompraResponse {
 	
 	private boolean successful;
 	private String message;
-	private Inventario value;
-
+	private InventarioResponse value;
+//	private int port;
 
 	
 	public boolean isSuccessful() {
@@ -24,12 +22,14 @@ public class CompraResponse {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	public Inventario getValue() {
+	public InventarioResponse getValue() {
 		return value;
 	}
-	public void setValue(Inventario value) {
+	public void setValue(InventarioResponse value) {
 		this.value = value;
 	}
+	
+	
 	
 
 

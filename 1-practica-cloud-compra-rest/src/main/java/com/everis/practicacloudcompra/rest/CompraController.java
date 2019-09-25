@@ -31,12 +31,12 @@ public class CompraController {
 		try {
 			response = compraServiceProxy.retrieveInventario(id);
 						
-			double stock= response.getValue().getStock();
+			double stock= response.getValue().getValue().getStock();
 			double stockminimo = reorden/100*stock;
 			
 		 if ((stock - stockminimo) >= cantidad) {
 				response.setSuccessful(true);
-				response.setMessage("Se puede comparar");	
+				response.setMessage("Se puede comparar");
 		 }else {
 			 response.setSuccessful(false);
 			 response.setMessage("No se puede comprar");
